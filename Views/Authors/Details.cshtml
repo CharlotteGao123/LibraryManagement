@@ -1,0 +1,11 @@
+@model LibraryManagement.Models.Author
+
+<h2>Author Detail</h2>
+<p><strong>Name:</strong> @Model.Name</p>
+<p><strong>Email:</strong> @Model.Email</p>
+<p><strong>Nationality:</strong> @Model.Nationality</p>
+<p><strong>Birth Date:</strong> @Model.BirthDate?.ToString("yyyy-MM-dd")</p>
+<p><strong>Biography:</strong> @Model.Biography</p>
+<p><strong>Books Written:</strong> @(Model.Books?.Count ?? 0)</p>
+
+<a asp-action="List">← Back to all authors</a>

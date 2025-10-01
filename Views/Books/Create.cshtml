@@ -1,0 +1,72 @@
+@model LibraryManagement.Models.Book
+
+@{
+    ViewData["Title"] = "Create Book";
+}
+
+<h2>Create a New Book</h2>
+
+<form asp-action="Create" method="post">
+    @Html.AntiForgeryToken()
+
+    <!-- Title -->
+    <div class="form-group">
+        <label asp-for="Title"></label>
+        <input asp-for="Title" class="form-control" required 
+               pattern="[A-Za-z0-9\s]{2,100}" 
+               title="Please enter a valid title (letters/numbers, 2-100 characters)" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <!-- ISBN -->
+    <div class="form-group">
+        <label asp-for="ISBN"></label>
+        <input asp-for="ISBN" class="form-control" required
+               pattern="[0-9\-]{10,13}" 
+               title="Please enter a valid ISBN (10–13 digits)" />
+        <span asp-validation-for="ISBN" class="text-danger"></span>
+    </div>
+
+    <!-- Published Year -->
+    <div class="form-group">
+        <label asp-for="PublishedYear"></label>
+        <input asp-for="PublishedYear" class="form-control" 
+               type="number" min="1500" max="2100"
+               title="Please enter a valid year (1500–2100)" />
+        <span asp-validation-for="PublishedYear" class="text-danger"></span>
+    </div>
+
+    <!-- Price -->
+    <div class="form-group">
+        <label asp-for="Price"></label>
+        <input asp-for="Price" class="form-control" 
+               type="number" min="0" max="1000" step="0.01"
+               title="Please enter a valid price (0–1000)" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+
+    <!-- Author Name -->
+    <div class="form-group">
+        <label>Author Name</label>
+        <input name="authorName" class="form-control" required
+               pattern="[A-Za-z\s]{2,50}" 
+               title="Please enter a valid author name (letters only)" />
+    </div>
+
+    <!-- Branch Name -->
+    <div class="form-group">
+        <label>Branch Name</label>
+        <input name="branchName" class="form-control" required
+               pattern="[A-Za-z\s]{2,50}" 
+               title="Please enter a valid branch name (letters only)" />
+    </div>
+
+    <button type="submit" class="btn btn-success">Save</button>
+</form>
+
+<a asp-action="List">← Back to all books</a>
+
+@section Scripts {
+    <!-- Enable client-side validation -->
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

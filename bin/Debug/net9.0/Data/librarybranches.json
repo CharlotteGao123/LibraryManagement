@@ -1,0 +1,12 @@
+[
+  { "LibraryBranchId": 1, "Name": "Branch A", "Address": "Addr 1", "Phone": "111-111" },
+  { "LibraryBranchId": 2, "Name": "Branch B", "Address": "Addr 2", "Phone": "111-112" },
+  { "LibraryBranchId": 3, "Name": "Branch C", "Address": "Addr 3", "Phone": "111-113" },
+  { "LibraryBranchId": 4, "Name": "Branch D", "Address": "Addr 4", "Phone": "111-114" },
+  { "LibraryBranchId": 5, "Name": "Branch E", "Address": "Addr 5", "Phone": "111-115" },
+  { "LibraryBranchId": 6, "Name": "Branch F", "Address": "Addr 6", "Phone": "111-116" },
+  { "LibraryBranchId": 7, "Name": "Branch G", "Address": "Addr 7", "Phone": "111-117" },
+  { "LibraryBranchId": 8, "Name": "Branch H", "Address": "Addr 8", "Phone": "111-118" },
+  { "LibraryBranchId": 9, "Name": "Branch I", "Address": "Addr 9", "Phone": "111-119" },
+  { "LibraryBranchId": 10, "Name": "Branch J", "Address": "Addr 10", "Phone": "111-120" }
+]

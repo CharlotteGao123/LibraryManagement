@@ -1,0 +1,32 @@
+<h2>All Authors</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Nationality</th>
+            <th>Birth Date</th>
+            <th>Biography</th>
+            <th>Books Count</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var author in Model)
+        {
+            <tr>
+                <td>@author.Name</td>
+                <td>@author.Email</td>
+                <td>@author.Nationality</td>
+                <td>@author.BirthDate?.ToString("yyyy-MM-dd")</td>
+                <td>@author.Biography</td>
+                <td>@(author.Books?.Count ?? 0)</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@author.AuthorId">Details</a> |
+                    <a asp-action="Edit" asp-route-id="@author.AuthorId">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@author.AuthorId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,10 @@
+@model LibraryManagement.Models.LibraryBranch
+
+<h2>Branch Detail</h2>
+<p><strong>Name:</strong> @Model.Name</p>
+<p><strong>Address:</strong> @Model.Address</p>
+<p><strong>Phone:</strong> @Model.Phone</p>
+<p><strong>Books Count:</strong> @(Model.Books?.Count ?? 0)</p>
+<p><strong>Customers Count:</strong> @(Model.Customers?.Count ?? 0)</p>
+
+<a asp-action="List">← Back to all branches</a>

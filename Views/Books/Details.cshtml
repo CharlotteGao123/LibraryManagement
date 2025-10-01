@@ -1,0 +1,11 @@
+@model LibraryManagement.Models.Book
+
+<h2>Book Detail</h2>
+<p><strong>Title:</strong> @Model.Title</p>
+<p><strong>ISBN:</strong> @Model.ISBN</p>
+<p><strong>Published Year:</strong> @Model.PublishedYear</p>
+<p><strong>Price:</strong> @Model.Price</p>
+<p><strong>Author:</strong> @Model.Author?.Name</p>
+<p><strong>Branch:</strong> @Model.LibraryBranch?.Name</p>
+
+<a asp-action="List">← Back to all books</a>

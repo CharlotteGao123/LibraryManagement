@@ -1,0 +1,34 @@
+@model LibraryManagement.Models.Book
+
+<h2>Edit Book</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="BookId" />
+    <div class="form-group">
+        <label>Title</label>
+        <input asp-for="Title" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>ISBN</label>
+        <input asp-for="ISBN" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Published Year</label>
+        <input asp-for="PublishedYear" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Price</label>
+        <input asp-for="Price" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Author Name</label>
+        <input name="authorName" class="form-control" value="@ViewBag.AuthorName" />
+    </div>
+    <div class="form-group">
+        <label>Branch Name</label>
+        <input name="branchName" class="form-control" value="@ViewBag.BranchName" />
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>
+
+<a asp-action="List">← Back to all books</a>
