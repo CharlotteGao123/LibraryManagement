@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/charlottegao/Desktop/留学生活/fdu/adv/LibraryManagement/LibraryManagement.csproj": {}
+    "C:\\Users\\Charlotte\\LibraryManagement\\LibraryManagement.csproj": {}
   },
   "projects": {
-    "/Users/charlottegao/Desktop/留学生活/fdu/adv/LibraryManagement/LibraryManagement.csproj": {
+    "C:\\Users\\Charlotte\\LibraryManagement\\LibraryManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/charlottegao/Desktop/留学生活/fdu/adv/LibraryManagement/LibraryManagement.csproj",
+        "projectUniqueName": "C:\\Users\\Charlotte\\LibraryManagement\\LibraryManagement.csproj",
         "projectName": "LibraryManagement",
-        "projectPath": "/Users/charlottegao/Desktop/留学生活/fdu/adv/LibraryManagement/LibraryManagement.csproj",
-        "packagesPath": "/Users/charlottegao/.nuget/packages/",
-        "outputPath": "/Users/charlottegao/Desktop/留学生活/fdu/adv/LibraryManagement/obj/",
+        "projectPath": "C:\\Users\\Charlotte\\LibraryManagement\\LibraryManagement.csproj",
+        "packagesPath": "C:\\Users\\Charlotte\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Charlotte\\LibraryManagement\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/charlottegao/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Charlotte\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -48,19 +48,45 @@
               "target": "Package",
               "version": "[9.0.1, )"
             },
+            "Microsoft.AspNetCore.Authentication.Google": {
+              "target": "Package",
+              "version": "[7.0.12, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.10, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[9.0.10, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[9.0.9, )"
+              "version": "[9.0.10, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.9, )"
+              "version": "[9.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[9.0.10, )"
             },
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
               "version": "[9.0.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.10, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[9.0.0, )"
             }
           },
           "imports": [
@@ -82,7 +108,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

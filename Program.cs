@@ -1,18 +1,24 @@
 using LibraryManagement.Data;
 using LibraryManagement.Models;
+using LibraryManagement.Services;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json;
-using LibraryManagement.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages();
+
+// Register your application services
 builder.Services.AddScoped<BookService>();
 builder.Services.AddScoped<AuthorService>();
 builder.Services.AddScoped<CustomerService>();
 builder.Services.AddScoped<LibraryBranchService>();
 
-// connect to database Data/Library.db
+// Setup SQLite database
 var dataFile = Path.Combine(builder.Environment.ContentRootPath, "Data", "Library.db");
 Directory.CreateDirectory(Path.GetDirectoryName(dataFile)!);
 
@@ -20,9 +26,49 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite($"Data Source={dataFile}")
            .EnableSensitiveDataLogging());
 
+// Setup Identity with default UI
+builder.Services.AddDefaultIdentity<IdentityUser>(options =>
+{
+    options.SignIn.RequireConfirmedAccount = true;
+
+    options.Password.RequireDigit = true;
+    options.Password.RequireLowercase = true;
+    options.Password.RequireNonAlphanumeric = true;
+    options.Password.RequireUppercase = true;
+    options.Password.RequiredLength = 6;
+    options.Password.RequiredUniqueChars = 1;
+
+    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
+    options.Lockout.MaxFailedAccessAttempts = 5;
+    options.Lockout.AllowedForNewUsers = true;
+
+    options.User.AllowedUserNameCharacters =
+        "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
+    options.User.RequireUniqueEmail = false;
+})
+.AddEntityFrameworkStores<AppDbContext>()
+.AddDefaultUI(); 
+
+// Google Authentication
+builder.Services.AddAuthentication().AddGoogle(googleOptions =>
+{
+    var rawClientId = builder.Configuration["Authentication:Google:ClientId"];
+    googleOptions.ClientId = rawClientId?.Replace("<", "").Replace(">", "");
+    googleOptions.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"];
+});
+// Configure authentication cookie
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.Cookie.HttpOnly = true;
+    options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
+    options.LoginPath = "/Identity/Account/Login";
+    options.AccessDeniedPath = "/Identity/Account/AccessDenied";
+    options.SlidingExpiration = true;
+});
+
 var app = builder.Build();
 
-// batch insert from the json files
+// Migrate database and batch insert JSON data
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
@@ -32,8 +78,7 @@ using (var scope = app.Services.CreateScope())
     {
         var basePath = Path.Combine(builder.Environment.ContentRootPath, "Data");
 
-        // Clear old data at each startup 
-        //to ensure that the JSON file content is the only data source
+        // Clear old data
         db.Books.RemoveRange(db.Books);
         db.Customers.RemoveRange(db.Customers);
         db.Authors.RemoveRange(db.Authors);
@@ -105,6 +150,7 @@ using (var scope = app.Services.CreateScope())
     }
 }
 
+// Configure middleware
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
@@ -114,9 +160,16 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
+app.UseAuthentication();
+app.UseAuthorization();
 
+// Map routes
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+app.MapRazorPages();
+
 app.Run();
+
+
