@@ -1,4 +1,5 @@
 # LibraryManagement — ASP.NET Core MVC + SQLite + Batch Insert
+# Now supports MVC & Razor Pages, social login, global exception handling, and ViewModel-based UI.
 
 A course project built with **ASP.NET Core MVC** and **Entity Framework Core (SQLite)**.  
 Implements CRUD for **Books, Authors, Customers, and Library Branches** with JSON-based batch insert support.
@@ -6,6 +7,11 @@ Implements CRUD for **Books, Authors, Customers, and Library Branches** with JSO
 ---
 
 ## Features
+- **Identity & Authentication**: User registration, login, logout, account management, email confirmation.
+- **Social Login**: Google & Facebook authentication, with branded UI buttons.
+- **Razor Pages**: Privacy, Error, and Identity pages use Razor Pages structure.
+- **ViewModel-based UI**: All front-end pages use ViewModel for data display, not direct Model.
+- **Global Exception Handling**: Custom middleware and error pages, with at least two exception types and informative responses.
 - **CRUD** operations for:
   - Books
   - Authors
@@ -36,6 +42,17 @@ LibraryManagement/
 ---
 
 ## Prerequisites
+- Visual Studio 2022 or VS Code
+1. Restore NuGet packages: `dotnet restore`
+2. Build: `dotnet build`
+3. Run: `dotnet run`
+4. Access app at `http://localhost:5287` (or configured port)
+- [x] User registration, login, logout, account management
+- [x] Google/Facebook login with branded buttons
+- [x] Batch data import and CRUD
+- [x] Razor Pages for error handling and themed error pages
+- [x] All UI uses ViewModel for data display
+- [x] At least two global exception responses
 - .NET 8 SDK  
 - SQLite  
 - DBeaver (optional, for inspecting `Library.db`)  
