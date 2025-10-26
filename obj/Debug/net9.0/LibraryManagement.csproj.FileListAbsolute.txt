@@ -1001,8 +1001,6 @@ C:\Users\Charlotte\LibraryManagement\obj\Debug\net9.0\compressed\wen9v3ct9e-jjsu
 C:\Users\Charlotte\LibraryManagement\obj\Debug\net9.0\compressed\qbxixjr1cv-9vr69e8ynj.gz
 C:\Users\Charlotte\LibraryManagement\obj\Debug\net9.0\compressed\s1rvjzzjg2-87fc7y1x7t.gz
 C:\Users\Charlotte\LibraryManagement\obj\Debug\net9.0\compressed\6by1g9f5n3-mlv21k5csn.gz
-C:\Users\Charlotte\LibraryManagement\obj\Debug\net9.0\compressed\45ixsd1dn1-h5sp33x46o.gz
-C:\Users\Charlotte\LibraryManagement\obj\Debug\net9.0\compressed\vb15nepvje-h5sp33x46o.gz
 C:\Users\Charlotte\LibraryManagement\obj\Debug\net9.0\staticwebassets.build.json
 C:\Users\Charlotte\LibraryManagement\obj\Debug\net9.0\staticwebassets.build.json.cache
 C:\Users\Charlotte\LibraryManagement\obj\Debug\net9.0\staticwebassets.development.json
@@ -1013,3 +1011,10 @@ C:\Users\Charlotte\LibraryManagement\obj\Debug\net9.0\refint\LibraryManagement.d
 C:\Users\Charlotte\LibraryManagement\obj\Debug\net9.0\LibraryManagement.pdb
 C:\Users\Charlotte\LibraryManagement\obj\Debug\net9.0\LibraryManagement.genruntimeconfig.cache
 C:\Users\Charlotte\LibraryManagement\obj\Debug\net9.0\ref\LibraryManagement.dll
+C:\Users\Charlotte\LibraryManagement\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.Facebook.dll
+C:\Users\Charlotte\LibraryManagement\obj\Debug\net9.0\compressed\45ixsd1dn1-rdu3y8e39t.gz
+C:\Users\Charlotte\LibraryManagement\obj\Debug\net9.0\compressed\vb15nepvje-rdu3y8e39t.gz
+C:\Users\Charlotte\LibraryManagement\bin\Debug\net9.0\Serilog.dll
+C:\Users\Charlotte\LibraryManagement\bin\Debug\net9.0\Serilog.Extensions.Logging.dll
+C:\Users\Charlotte\LibraryManagement\bin\Debug\net9.0\Serilog.Sinks.File.dll
+C:\Users\Charlotte\LibraryManagement\bin\Debug\net9.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll

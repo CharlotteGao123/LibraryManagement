@@ -67,7 +67,12 @@
                             <p>
                                 @foreach (var provider in Model.ExternalLogins!)
                                 {
-                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+                                    var btnClass = provider.Name == "Google" ? "btn-google" : provider.Name == "Facebook" ? "btn-facebook" : "btn-primary";
+                                    var iconClass = provider.Name == "Google" ? "fab fa-google" : provider.Name == "Facebook" ? "fab fa-facebook" : "";
+                                    <button type="submit" class="btn @btnClass" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">
+                                        @if (!string.IsNullOrEmpty(iconClass)) { <i class="@iconClass"></i> }
+                                        @provider.DisplayName
+                                    </button>
                                 }
                             </p>
                         </div>

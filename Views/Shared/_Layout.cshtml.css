@@ -1,5 +1,20 @@
-﻿/* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
+﻿.btn-google {
+  background-color: #db4437 !important;
+  color: white !important;
+  border: none;
+  margin-right: 10px;
+}
+.btn-facebook {
+  background-color: #4267B2 !important;
+  color: white !important;
+  border: none;
+}
+.btn-google i, .btn-facebook i {
+  margin-right: 6px;
+}
+#manage {
+  color: white !important;
+}
 
 a.navbar-brand {
   white-space: normal;

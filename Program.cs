@@ -5,8 +5,16 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json;
+using Microsoft.AspNetCore.Authentication.Facebook;
+using System.Net.Mime;
+using Microsoft.AspNetCore.Diagnostics;
+using Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore;
+
+
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -47,7 +55,7 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options =>
     options.User.RequireUniqueEmail = false;
 })
 .AddEntityFrameworkStores<AppDbContext>()
-.AddDefaultUI(); 
+.AddDefaultUI();
 
 // Google Authentication
 builder.Services.AddAuthentication().AddGoogle(googleOptions =>
@@ -56,6 +64,14 @@ builder.Services.AddAuthentication().AddGoogle(googleOptions =>
     googleOptions.ClientId = rawClientId?.Replace("<", "").Replace(">", "");
     googleOptions.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"];
 });
+
+builder.Services.AddAuthentication()
+    .AddFacebook(options =>
+    {
+        options.AppId = builder.Configuration["Authentication:Facebook:AppId"];
+        options.AppSecret = builder.Configuration["Authentication:Facebook:AppSecret"];
+    });
+
 // Configure authentication cookie
 builder.Services.ConfigureApplicationCookie(options =>
 {
@@ -150,18 +166,66 @@ using (var scope = app.Services.CreateScope())
     }
 }
 
+// // Configure middleware - lambda style error handling
+// if (!app.Environment.IsDevelopment())
+// {
+//     app.UseExceptionHandler(exceptionHandlerApp =>
+//     {
+//         exceptionHandlerApp.Run(async context =>
+//         {
+//             context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+//             context.Response.ContentType = "text/html";
+
+//             await context.Response.WriteAsync("An exception was thrown.");
+
+//             var exceptionHandlerPathFeature = context.Features.Get<IExceptionHandlerPathFeature>();
+
+//             if (exceptionHandlerPathFeature?.Error is FileNotFoundException)
+//             {
+//                 await context.Response.WriteAsync(" The file was not found.");
+//             }
+
+//             if (exceptionHandlerPathFeature?.Path == "/")
+//             {
+//                 await context.Response.WriteAsync(" Page: Home.");
+//             }
+//         });
+//     });
+// }
+
+
 // Configure middleware
 if (!app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Home/Error");
+    app.UseExceptionHandler("/Error");
     app.UseHsts();
 }
+// app.UseStatusCodePages(); //Status Code: 404; Not Found
+
+// using static System.Net.Mime.MediaTypeNames;
+//app.UseStatusCodePages("text/html", "Status Code Page: {0}"); //Status Code Page: 404
+
+// UseStatusCodePages with lambda
+// app.UseStatusCodePages(async statusCodeContext =>
+// {
+//    // using static System.Net.Mime.MediaTypeNames;
+//   statusCodeContext.HttpContext.Response.ContentType = "text/html";
+//   await statusCodeContext.HttpContext.Response.WriteAsync(
+//     $"Status Code Page: {statusCodeContext.HttpContext.Response.StatusCode}");
+// });
+
+//app.UseStatusCodePagesWithRedirects("/StatusCode/{0}");
+
+//UseStatusCodePagesWithReExecute
+app.UseStatusCodePagesWithReExecute("/Error", "?statusCode={0}");
+
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
+
 
 // Map routes
 app.MapControllerRoute(

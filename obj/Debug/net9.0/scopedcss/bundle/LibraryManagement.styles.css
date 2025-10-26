@@ -1,6 +1,21 @@
 /* _content/LibraryManagement/Views/Shared/_Layout.cshtml.rz.scp.css */
-/* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
+.btn-google[b-zogy9lo6il] {
+  background-color: #db4437 !important;
+  color: white !important;
+  border: none;
+  margin-right: 10px;
+}
+.btn-facebook[b-zogy9lo6il] {
+  background-color: #4267B2 !important;
+  color: white !important;
+  border: none;
+}
+.btn-google i[b-zogy9lo6il], .btn-facebook i[b-zogy9lo6il] {
+  margin-right: 6px;
+}
+#manage[b-zogy9lo6il] {
+  color: white !important;
+}
 
 a.navbar-brand[b-zogy9lo6il] {
   white-space: normal;
