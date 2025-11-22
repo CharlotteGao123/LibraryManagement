@@ -1,0 +1,453 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LibraryManagement</name>
+    </assembly>
+    <members>
+        <member name="T:LibraryManagement.Data.Migratio.Update_20250927">
+            <inheritdoc />
+        </member>
+        <member name="M:LibraryManagement.Data.Migratio.Update_20250927.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:LibraryManagement.Data.Migratio.Update_20250927.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:LibraryManagement.Data.Migratio.Update_20250927.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:LibraryManagement.Data.Migratio.SyncDbModel">
+            <inheritdoc />
+        </member>
+        <member name="M:LibraryManagement.Data.Migratio.SyncDbModel.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:LibraryManagement.Data.Migratio.SyncDbModel.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:LibraryManagement.Data.Migratio.SyncDbModel.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="P:LibraryManagement.Areas.Identity.Pages.Account.LoginModel.Input">
+            <summary>
+                This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Areas.Identity.Pages.Account.LoginModel.ExternalLogins">
+            <summary>
+                This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Areas.Identity.Pages.Account.LoginModel.ReturnUrl">
+            <summary>
+                This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Areas.Identity.Pages.Account.LoginModel.ErrorMessage">
+            <summary>
+                This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="T:LibraryManagement.Areas.Identity.Pages.Account.LoginModel.InputModel">
+            <summary>
+                This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Areas.Identity.Pages.Account.LoginModel.InputModel.Email">
+            <summary>
+                This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Areas.Identity.Pages.Account.LoginModel.InputModel.Password">
+            <summary>
+                This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Areas.Identity.Pages.Account.LoginModel.InputModel.RememberMe">
+            <summary>
+                This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Areas.Identity.Pages.Account.RegisterModel.Input">
+            <summary>
+                This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Areas.Identity.Pages.Account.RegisterModel.ReturnUrl">
+            <summary>
+                This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Areas.Identity.Pages.Account.RegisterModel.ExternalLogins">
+            <summary>
+                This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="T:LibraryManagement.Areas.Identity.Pages.Account.RegisterModel.InputModel">
+            <summary>
+                This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Areas.Identity.Pages.Account.RegisterModel.InputModel.Email">
+            <summary>
+                This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Areas.Identity.Pages.Account.RegisterModel.InputModel.Password">
+            <summary>
+                This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Areas.Identity.Pages.Account.RegisterModel.InputModel.ConfirmPassword">
+            <summary>
+                This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Areas.Identity.Pages.Account.RegisterConfirmationModel.Email">
+            <summary>
+                This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Areas.Identity.Pages.Account.RegisterConfirmationModel.DisplayConfirmAccountLink">
+            <summary>
+                This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Areas.Identity.Pages.Account.RegisterConfirmationModel.EmailConfirmationUrl">
+            <summary>
+                This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="T:LibraryManagement.Controllers.AuthController">
+            <summary>
+            Authentication API for user registration and login.
+            Provides JWT tokens for API access.
+            </summary>
+        </member>
+        <member name="M:LibraryManagement.Controllers.AuthController.Register(LibraryManagement.Controllers.RegisterModel)">
+            <summary>
+            Register a new user account.
+            </summary>
+            <param name="model">User registration details with email and password</param>
+            <returns>Success or error message</returns>
+            <response code="200">User registered successfully</response>
+            <response code="400">If registration fails (invalid email, weak password, etc.)</response>
+        </member>
+        <member name="M:LibraryManagement.Controllers.AuthController.Login(LibraryManagement.Controllers.LoginModel)">
+            <summary>
+            Login user and get JWT token for API access.
+            </summary>
+            <param name="model">User login credentials (email and password)</param>
+            <returns>JWT token for authenticated requests</returns>
+            <response code="200">Returns JWT token</response>
+            <response code="401">If credentials are invalid</response>
+        </member>
+        <member name="T:LibraryManagement.Controllers.RegisterModel">
+            <summary>
+            Model for user registration
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Controllers.RegisterModel.Email">
+            <summary>
+            User email address (used as username)
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Controllers.RegisterModel.Password">
+            <summary>
+            User password (must be at least 6 characters with uppercase, lowercase, number, and special character)
+            </summary>
+        </member>
+        <member name="T:LibraryManagement.Controllers.LoginModel">
+            <summary>
+            Model for user login
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Controllers.LoginModel.Email">
+            <summary>
+            User email address
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Controllers.LoginModel.Password">
+            <summary>
+            User password
+            </summary>
+        </member>
+        <member name="T:LibraryManagement.Controllers.BooksApiController">
+            <summary>
+            API for managing books in the library system.
+            Requires JWT authentication for all operations.
+            </summary>
+        </member>
+        <member name="M:LibraryManagement.Controllers.BooksApiController.GetBooks">
+            <summary>
+            Get all books with their associated authors and library branches.
+            </summary>
+            <returns>A list of all books</returns>
+            <response code="200">Returns the list of books</response>
+            <response code="404">If no books are found</response>
+            <response code="401">If the user is not authenticated</response>
+        </member>
+        <member name="M:LibraryManagement.Controllers.BooksApiController.GetBook(System.Int32)">
+            <summary>
+            Get a specific book by ID.
+            </summary>
+            <param name="id">The book ID</param>
+            <returns>The book details</returns>
+            <response code="200">Returns the book</response>
+            <response code="404">If the book is not found</response>
+            <response code="401">If the user is not authenticated</response>
+        </member>
+        <member name="M:LibraryManagement.Controllers.BooksApiController.PutBook(System.Int32,LibraryManagement.Models.Book)">
+            <summary>
+            Update an existing book.
+            </summary>
+            <param name="id">The book ID to update</param>
+            <param name="book">The updated book details</param>
+            <returns>No content</returns>
+            <response code="204">Book updated successfully</response>
+            <response code="400">If the book ID doesn't match</response>
+            <response code="404">If the book is not found</response>
+            <response code="401">If the user is not authenticated</response>
+        </member>
+        <member name="M:LibraryManagement.Controllers.BooksApiController.PostBook(LibraryManagement.Models.Book)">
+            <summary>
+            Create a new book.
+            </summary>
+            <param name="book">The book details to create</param>
+            <returns>The created book with its ID</returns>
+            <response code="201">Book created successfully</response>
+            <response code="400">If the book data is invalid</response>
+            <response code="401">If the user is not authenticated</response>
+        </member>
+        <member name="M:LibraryManagement.Controllers.BooksApiController.DeleteBook(System.Int32)">
+            <summary>
+            Delete a book by ID.
+            </summary>
+            <param name="id">The book ID to delete</param>
+            <returns>No content</returns>
+            <response code="204">Book deleted successfully</response>
+            <response code="404">If the book is not found</response>
+            <response code="401">If the user is not authenticated</response>
+        </member>
+        <member name="T:LibraryManagement.Migrations.InitialCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:LibraryManagement.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:LibraryManagement.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:LibraryManagement.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:LibraryManagement.Migrations.AddCustomerTable">
+            <inheritdoc />
+        </member>
+        <member name="M:LibraryManagement.Migrations.AddCustomerTable.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:LibraryManagement.Migrations.AddCustomerTable.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:LibraryManagement.Migrations.AddCustomerTable.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:LibraryManagement.Migrations.UpdateModels">
+            <inheritdoc />
+        </member>
+        <member name="M:LibraryManagement.Migrations.UpdateModels.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:LibraryManagement.Migrations.UpdateModels.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:LibraryManagement.Migrations.UpdateModels.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:LibraryManagement.Migrations.Init">
+            <inheritdoc />
+        </member>
+        <member name="M:LibraryManagement.Migrations.Init.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:LibraryManagement.Migrations.Init.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:LibraryManagement.Migrations.Init.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:LibraryManagement.Models.Author">
+            <summary>
+            Represents an author in the library system.
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Models.Author.AuthorId">
+            <summary>
+            Unique identifier for the author
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Models.Author.Name">
+            <summary>
+            Author's full name (required, max 200 characters)
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Models.Author.Biography">
+            <summary>
+            Author's biography
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Models.Author.BirthDate">
+            <summary>
+            Author's date of birth
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Models.Author.Nationality">
+            <summary>
+            Author's nationality
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Models.Author.Email">
+            <summary>
+            Author's email address
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Models.Author.Books">
+            <summary>
+            Navigation property to all books by this author
+            </summary>
+        </member>
+        <member name="T:LibraryManagement.Models.Book">
+            <summary>
+            Represents a book in the library system.
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Models.Book.BookId">
+            <summary>
+            Unique identifier for the book
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Models.Book.Title">
+            <summary>
+            Title of the book (required, max 300 characters)
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Models.Book.ISBN">
+            <summary>
+            ISBN number of the book (10-13 digits format)
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Models.Book.PublishedYear">
+            <summary>
+            Year the book was published (between 1500 and 2100)
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Models.Book.Price">
+            <summary>
+            Price of the book (0.01 to 10000)
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Models.Book.AuthorId">
+            <summary>
+            Foreign key to Author
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Models.Book.Author">
+            <summary>
+            Navigation property to Author
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Models.Book.LibraryBranchId">
+            <summary>
+            Foreign key to LibraryBranch
+            </summary>
+        </member>
+        <member name="T:LibraryManagement.Models.Customer">
+            <summary>
+            Represents a customer/member in the library system.
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Models.Customer.CustomerId">
+            <summary>
+            Unique identifier for the customer
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Models.Customer.FirstName">
+            <summary>
+            Customer's first name (required, max 100 characters)
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Models.Customer.LastName">
+            <summary>
+            Customer's last name (required, max 100 characters)
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Models.Customer.Email">
+            <summary>
+            Customer's email address
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Models.Customer.Phone">
+            <summary>
+            Customer's phone number
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Models.Customer.LibraryBranchId">
+            <summary>
+            Foreign key to LibraryBranch</summary>
+        </member>
+        <member name="T:LibraryManagement.Models.LibraryBranch">
+            <summary>
+            Represents a library branch in the library system.
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Models.LibraryBranch.LibraryBranchId">
+            <summary>
+            Unique identifier for the library branch
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Models.LibraryBranch.Name">
+            <summary>
+            Name of the library branch (required, max 150 characters)
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Models.LibraryBranch.Address">
+            <summary>
+            Physical address of the library branch
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Models.LibraryBranch.Phone">
+            <summary>
+            Phone number of the library branch
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Models.LibraryBranch.Books">
+            <summary>
+            Navigation property to all books in this branch
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Models.LibraryBranch.Customers">
+            <summary>
+            Navigation property to all customers registered at this branch
+            </summary>
+        </member>
+    </members>
+</doc>

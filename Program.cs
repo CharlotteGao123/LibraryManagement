@@ -1,9 +1,13 @@
 using LibraryManagement.Data;
 using LibraryManagement.Models;
 using LibraryManagement.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using Swashbuckle.AspNetCore.SwaggerGen;
+using System.Text;
 using System.Text.Json;
 using Microsoft.AspNetCore.Authentication.Facebook;
 using System.Net.Mime;
@@ -20,6 +24,10 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 
+// Add Swagger for API documentation
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
 // Register your application services
 builder.Services.AddScoped<BookService>();
 builder.Services.AddScoped<AuthorService>();
@@ -33,6 +41,32 @@ Directory.CreateDirectory(Path.GetDirectoryName(dataFile)!);
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite($"Data Source={dataFile}")
            .EnableSensitiveDataLogging());
+
+// Configure JWT Authentication
+var jwtSettings = builder.Configuration.GetSection("JwtSettings");
+var secretKey = jwtSettings["SecretKey"] ?? "ThisIsAVeryLongSecretKeyForJWTAuthenticationPurposeWithMinimumLength32Characters";
+var key = Encoding.ASCII.GetBytes(secretKey);
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(key),
+        ValidateIssuer = true,
+        ValidIssuer = jwtSettings["Issuer"],
+        ValidateAudience = true,
+        ValidAudience = jwtSettings["Audience"],
+        ValidateLifetime = true,
+        ClockSkew = TimeSpan.Zero
+    };
+});
 
 // Setup Identity with default UI
 builder.Services.AddDefaultIdentity<IdentityUser>(options =>
@@ -199,6 +233,12 @@ if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error");
     app.UseHsts();
+}
+else
+{
+    // Enable Swagger in Development environment
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 // app.UseStatusCodePages(); //Status Code: 404; Not Found
 
